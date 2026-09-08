@@ -2,6 +2,7 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { WaveComponent } from '../../shared/wave/wave.component';
+import { SeoService } from '../../shared/seo/seo.service';
 
 interface Carnet {
   id: string;
@@ -27,6 +28,7 @@ interface Carnet {
 export class CarnetDetailComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private titleService = inject(Title);
+  private seo = inject(SeoService);
 
   carnet = signal<Carnet | null>(null);
   notFound = signal(false);
@@ -53,7 +55,13 @@ export class CarnetDetailComponent implements OnInit {
         const found = data.find((c) => c.id === id) ?? null;
         this.carnet.set(found);
         if (found) {
-          this.titleService.setTitle(`${found.title} — Les Carnets — Le Souffle Océanique`);
+          const fullTitle = `${found.title} — Les Carnets — Le Souffle Océanique`;
+          this.titleService.setTitle(fullTitle);
+          // La route les-carnets/:id n'a pas de description statique (voir
+          // app.routes.ts) : on pose ici celle du carnet réellement affiché,
+          // avec son propre titre pour l'aperçu de partage.
+          this.seo.updateDescription(found.excerpt);
+          this.seo.updateTitleTags(fullTitle);
         } else {
           this.notFound.set(true);
         }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap écrit à la main : seules les pages statiques du site y figurent.
+  Les carnets individuels (/les-carnets/:id) ne sont volontairement PAS
+  listés ici, pour rester cohérent avec l'objectif de la page Carnets :
+  ajouter un article ne doit nécessiter que d'éditer
+  public/assets/data/carnets.json, jamais de toucher au code (ni donc à ce
+  fichier). Ils restent malgré tout indexables : Google les découvre via les
+  liens internes depuis /les-carnets.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://le-souffle-oceanique-yoga.vercel.app/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://le-souffle-oceanique-yoga.vercel.app/yoga</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://le-souffle-oceanique-yoga.vercel.app/son-et-relaxation</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://le-souffle-oceanique-yoga.vercel.app/informations-pratiques</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://le-souffle-oceanique-yoga.vercel.app/experiences</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://le-souffle-oceanique-yoga.vercel.app/evenements</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://le-souffle-oceanique-yoga.vercel.app/les-carnets</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://le-souffle-oceanique-yoga.vercel.app/a-propos</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://le-souffle-oceanique-yoga.vercel.app/contact</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://le-souffle-oceanique-yoga.vercel.app/mentions-legales</loc>
+    <priority>0.2</priority>
+  </url>
+</urlset>
