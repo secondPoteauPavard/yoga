@@ -1,11 +1,52 @@
-.hero { padding-top: clamp(3rem, 8vw, 6rem); padding-bottom: 0; }
+.hero {
+  padding-top: clamp(3rem, 8vw, 6rem);
+  padding-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-blob {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(2px);
+  opacity: 0.35;
+}
+
+.hero-blob--a {
+  width: clamp(220px, 30vw, 420px);
+  height: clamp(220px, 30vw, 420px);
+  top: -12%;
+  right: -8%;
+  background: var(--sky-blue);
+  border-radius: 58% 42% 63% 37% / 41% 55% 45% 59%;
+}
+
+.hero-blob--b {
+  width: clamp(160px, 20vw, 300px);
+  height: clamp(160px, 20vw, 300px);
+  bottom: -15%;
+  left: -6%;
+  background: var(--terracotta);
+  opacity: 0.28;
+  border-radius: 45% 55% 40% 60% / 60% 45% 55% 40%;
+}
+
+.hero-blob--c {
+  width: clamp(120px, 14vw, 200px);
+  height: clamp(120px, 14vw, 200px);
+  top: 20%;
+  left: 6%;
+  background: var(--sand);
+  opacity: 0.18;
+  border-radius: 50% 50% 35% 65% / 55% 40% 60% 45%;
+}
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
   gap: 2.5rem;
-  padding-bottom: clamp(3rem, 8vw, 6rem);
+  padding-bottom: clamp(4rem, 9vw, 7rem);
 }
 
 .hero-script {

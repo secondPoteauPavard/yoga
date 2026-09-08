@@ -1,8 +1,8 @@
-<div class="wave" [class.wave--flip]="flip" aria-hidden="true">
-  <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<div class="wave" [class.wave--flip]="flip" [style.background]="from" aria-hidden="true">
+  <svg viewBox="0 0 1200 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path
       [attr.fill]="fill"
-      d="M0,40 C150,90 350,0 600,35 C850,70 1050,10 1200,40 L1200,80 L0,80 Z"
+      d="M0,300 L0,230 Q600,-80 1200,230 L1200,300 Z"
     ></path>
   </svg>
 </div>

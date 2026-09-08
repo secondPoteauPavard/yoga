@@ -208,9 +208,42 @@ button, input, textarea, select { font-family: inherit; }
 
 .page-hero {
   padding-top: clamp(3.5rem, 9vw, 6rem);
+  padding-bottom: clamp(4rem, 9vw, 7rem);
+  position: relative;
+  overflow: hidden;
 }
 .page-hero h1 { max-width: 24ch; }
 .page-hero .lede { max-width: 65ch; }
+
+.page-hero::before,
+.page-hero::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.page-hero::before {
+  width: clamp(200px, 26vw, 360px);
+  height: clamp(200px, 26vw, 360px);
+  top: -18%;
+  right: -6%;
+  background: var(--sky-blue);
+  opacity: 0.3;
+  border-radius: 58% 42% 63% 37% / 41% 55% 45% 59%;
+}
+
+.page-hero::after {
+  width: clamp(140px, 16vw, 240px);
+  height: clamp(140px, 16vw, 240px);
+  bottom: -20%;
+  left: -5%;
+  background: var(--terracotta);
+  opacity: 0.22;
+  border-radius: 45% 55% 40% 60% / 60% 45% 55% 40%;
+}
+
+.page-hero > * { position: relative; z-index: 1; }
 
 .two-col {
   display: grid;

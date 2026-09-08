@@ -5,6 +5,8 @@
   background: rgba(246, 242, 236, 0.92);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(22, 93, 135, 0.08);
+  border-radius: 0 0 26px 26px;
+  overflow: hidden;
 }
 
 .bar {

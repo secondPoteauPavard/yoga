@@ -1,5 +1,8 @@
 <!-- Hero ------------------------------------------------------------- -->
 <section class="hero section--ocean">
+  <div class="hero-blob hero-blob--a" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob--b" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob--c" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-copy">
       <p class="section-eyebrow">Yoga de l'Énergie · Souffle · Son · Mouvement · Résonance</p>
@@ -19,7 +22,7 @@
     </div>
   </div>
 </section>
-<app-wave fill="var(--sand-light)"></app-wave>
+<app-wave fill="var(--sand-light)" from="var(--turquoise)"></app-wave>
 
 <!-- Portes d'entrée ---------------------------------------------------- -->
 <section class="section section--white">
@@ -39,7 +42,7 @@
 </section>
 
 <!-- Infos pratiques visibles dès l'accueil ------------------------------ -->
-<app-wave fill="var(--sand)" [flip]="true"></app-wave>
+<app-wave fill="var(--sand)" from="var(--white)" [flip]="true"></app-wave>
 <section class="section section--sand">
   <div class="container infos-grid">
     <div>
@@ -66,7 +69,7 @@
 </section>
 
 <!-- Contenu récent / Carnets -------------------------------------------- -->
-<app-wave fill="var(--white)"></app-wave>
+<app-wave fill="var(--white)" from="var(--sand)"></app-wave>
 <section class="section section--white">
   <div class="container carnets-teaser">
     <div>

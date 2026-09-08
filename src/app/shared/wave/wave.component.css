@@ -1,6 +1,10 @@
 .wave {
-  line-height: 0;
+  --wave-h: clamp(90px, 16vw, 260px);
+  height: var(--wave-h);
   margin-bottom: -2px; /* évite un liseré entre la vague et la section suivante */
+  line-height: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .wave--flip {
@@ -9,6 +13,6 @@
 
 .wave svg {
   width: 100%;
-  height: clamp(30px, 6vw, 70px);
+  height: var(--wave-h);
   display: block;
 }
