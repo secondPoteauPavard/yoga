@@ -2,56 +2,37 @@
   <div class="container">
     <p class="section-eyebrow">Contact / Inscription</p>
     <h1>Écrire, appeler, s'inscrire</h1>
+    <p class="lede" style="color:rgba(255,255,255,0.9);">
+      Le plus simple pour un premier contact : téléphone, email, ou directement sur les réseaux
+      (Instagram, Facebook). Un formulaire de réservation en ligne arrivera dans une prochaine
+      version du site.
+    </p>
   </div>
 </section>
+<app-wave fill="var(--sand-light)" from="var(--turquoise)"></app-wave>
 
 <section class="section">
-  <div class="container two-col">
-    <div>
+  <div class="container">
+    <div class="card contact-card">
       <h2>Coordonnées</h2>
       <ul class="detail-list" style="font-size:1rem;">
         <li><strong>Téléphone</strong> — <a href="tel:0624494658">06 24 49 46 58</a></li>
         <li><strong>Email</strong> — <a href="mailto:lesouffleoceanique@gmail.com">lesouffleoceanique&#64;gmail.com</a></li>
-        <li><strong>Réseaux</strong> — Instagram &amp; Facebook : &#64;lesouffleoceanique</li>
+        <li>
+          <strong>Réseaux</strong> — contact possible aussi via
+          <a href="https://instagram.com/lesouffleoceanique" target="_blank" rel="noopener">Instagram</a>
+          ou
+          <a href="https://www.facebook.com/share/19ZeCLE8Da/" target="_blank" rel="noopener">Facebook</a>
+          (&#64;lesouffleoceanique)
+        </li>
         <li><strong>Lieux</strong> — Salle Manaoc (Labenne Océan) &amp; salle privée (Labenne marais d'Orx)</li>
       </ul>
-      <p class="lede" style="margin-top:1.5rem;font-size:0.85rem;">
-        Ce formulaire ouvre votre messagerie avec le message pré-rempli — une vraie prise en
-        charge en ligne (envoi direct, confirmation automatique) sera branchée avec le futur
-        outil d'emailing.
-      </p>
+      <div class="contact-actions">
+        <a href="tel:0624494658" class="btn btn--primary">Appeler</a>
+        <a href="mailto:lesouffleoceanique@gmail.com" class="btn btn--ghost">Envoyer un email</a>
+        <a href="https://instagram.com/lesouffleoceanique" target="_blank" rel="noopener" class="btn btn--ghost">Instagram</a>
+        <a href="https://www.facebook.com/share/19ZeCLE8Da/" target="_blank" rel="noopener" class="btn btn--ghost">Facebook</a>
+      </div>
     </div>
-
-    <form class="contact-form card" (ngSubmit)="envoyer()" #contactForm="ngForm">
-      <div class="form-row">
-        <label>
-          Prénom
-          <input type="text" name="prenom" [(ngModel)]="form.prenom" required />
-        </label>
-        <label>
-          Nom
-          <input type="text" name="nom" [(ngModel)]="form.nom" required />
-        </label>
-      </div>
-      <div class="form-row">
-        <label>
-          Email
-          <input type="email" name="email" [(ngModel)]="form.email" required />
-        </label>
-        <label>
-          Téléphone (facultatif)
-          <input type="tel" name="telephone" [(ngModel)]="form.telephone" />
-        </label>
-      </div>
-      <label>
-        Objet
-        <input type="text" name="objet" [(ngModel)]="form.objet" placeholder="Inscription, question, atelier..." />
-      </label>
-      <label>
-        Message
-        <textarea name="message" rows="5" [(ngModel)]="form.message" required></textarea>
-      </label>
-      <button type="submit" class="btn btn--primary" [disabled]="contactForm.invalid">Envoyer</button>
-    </form>
   </div>
 </section>

@@ -1,25 +1,74 @@
 <section class="section section--ocean page-hero">
   <div class="container">
     <p class="section-eyebrow">Les Carnets</p>
-    <h1>Bientôt disponible</h1>
+    <h1>Les premiers carnets</h1>
     <p class="lede" style="color:rgba(255,255,255,0.9);">
       Un espace pour lire, plutôt qu'un blog : corps &amp; mouvement, souffle, yoga de l'énergie,
       son &amp; vibration, transmission, réflexions, traversées...
     </p>
   </div>
 </section>
+<app-wave fill="var(--sand-light)" from="var(--turquoise)"></app-wave>
 
-<section class="section center-text">
+<section class="section">
   <div class="container">
-    <div class="categories">
-      @for (cat of categories; track cat) {
-        <span class="pill">{{ cat }}</span>
+    @if (usedCategories().length > 1) {
+      <div class="categories">
+        <button
+          type="button"
+          class="pill filter-pill"
+          [class.filter-pill--active]="activeCategory() === null"
+          (click)="clearCategory()"
+          [attr.aria-pressed]="activeCategory() === null"
+        >Tous</button>
+        @for (cat of usedCategories(); track cat) {
+          <button
+            type="button"
+            class="pill filter-pill"
+            [class.filter-pill--active]="activeCategory() === cat"
+            (click)="toggleCategory(cat)"
+            [attr.aria-pressed]="activeCategory() === cat"
+          >{{ cat }}</button>
+        }
+      </div>
+    }
+
+    <div class="carnets-list">
+      @for (carnet of visible(); track carnet.id) {
+        <article class="card carnet-card">
+          <div class="carnet-meta">
+            <span class="pill">{{ carnet.category }}</span>
+            <time [attr.datetime]="carnet.date">{{ formatDate(carnet.date) }}</time>
+          </div>
+          <h2><a [routerLink]="['/les-carnets', carnet.id]">{{ carnet.title }}</a></h2>
+          <p>{{ carnet.excerpt }}</p>
+          <a [routerLink]="['/les-carnets', carnet.id]" class="carnet-link">Lire la suite →</a>
+        </article>
+      }
+
+      @if (loadError()) {
+        <p class="lede center-text" style="margin-inline:auto;">
+          Les carnets n'ont pas pu être chargés pour le moment.
+        </p>
+      } @else if (carnets().length > 0 && filtered().length === 0) {
+        <p class="lede center-text" style="margin-inline:auto;">
+          Aucun carnet dans cette catégorie pour le moment.
+        </p>
       }
     </div>
-    <p class="lede center-text" style="margin:2rem auto 0;">
-      Les premiers articles seront publiables directement par Émilie une fois l'espace
-      d'administration branché — titre, image, texte, catégorie, date et extrait.
+
+    @if (hasMore()) {
+      <p class="center-text" style="margin-top:2rem;">
+        <button type="button" class="btn btn--ghost" (click)="loadMore()">Charger plus de carnets</button>
+      </p>
+    }
+
+    <p class="lede center-text" style="margin:2.5rem auto 0;">
+      D'autres carnets arrivent bientôt. En attendant, restez informé·e sur Instagram et Facebook,
+      ou écrivez à Émilie.
     </p>
-    <a routerLink="/contact" class="btn btn--primary" style="margin-top:1rem;">Être prévenu·e de la sortie</a>
+    <p class="center-text" style="margin-top:1rem;">
+      <a routerLink="/contact" class="btn btn--primary">Être prévenu·e des prochains carnets</a>
+    </p>
   </div>
 </section>

@@ -47,6 +47,14 @@ export const routes: Routes = [
     title: 'Les Carnets — Le Souffle Océanique',
   },
   {
+    path: 'les-carnets/:id',
+    loadComponent: () =>
+      import('./pages/carnet-detail/carnet-detail.component').then(
+        (m) => m.CarnetDetailComponent
+      ),
+    title: 'Carnet — Le Souffle Océanique',
+  },
+  {
     path: 'a-propos',
     loadComponent: () =>
       import('./pages/a-propos/a-propos.component').then((m) => m.AProposComponent),

@@ -4,3 +4,67 @@
   gap: 0.6rem;
   justify-content: center;
 }
+
+.filter-pill {
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.filter-pill:hover {
+  border-color: var(--ocean-deep);
+}
+
+.filter-pill--active {
+  background: var(--ocean-deep);
+  color: var(--white);
+}
+
+.carnets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+}
+
+.carnet-card {
+  text-align: left;
+}
+
+.carnet-card h2 {
+  margin-bottom: 0.75rem;
+}
+
+.carnet-card h2 a {
+  color: var(--ocean-deep);
+  text-decoration: none;
+}
+
+.carnet-card h2 a:hover {
+  color: var(--terracotta);
+}
+
+.carnet-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.carnet-meta time {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.carnet-card p:last-of-type {
+  margin-bottom: 0.75rem;
+}
+
+.carnet-link {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--terracotta);
+}

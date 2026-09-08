@@ -1,0 +1,10 @@
+.carnet-article {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.carnet-article p:last-child {
+  margin-bottom: 0;
+}

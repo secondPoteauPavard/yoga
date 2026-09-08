@@ -1,0 +1,38 @@
+@if (carnet(); as c) {
+  <section class="section section--ocean page-hero">
+    <div class="container">
+      <p class="section-eyebrow">{{ c.category }}</p>
+      <h1>{{ c.title }}</h1>
+      <p class="lede" style="color:rgba(255,255,255,0.9);">{{ formatDate(c.date) }}</p>
+    </div>
+  </section>
+  <app-wave fill="var(--sand-light)" from="var(--turquoise)"></app-wave>
+
+  <section class="section">
+    <div class="container">
+      <article class="carnet-article">
+        @for (paragraph of c.body; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+      </article>
+      <p style="max-width:680px;margin:2.5rem auto 0;">
+        <a routerLink="/les-carnets" class="btn btn--ghost">← Tous les carnets</a>
+      </p>
+    </div>
+  </section>
+} @else if (notFound()) {
+  <section class="section section--ocean page-hero">
+    <div class="container">
+      <p class="section-eyebrow">Les Carnets</p>
+      <h1>Carnet introuvable</h1>
+      <p class="lede" style="color:rgba(255,255,255,0.9);">
+        Ce carnet n'existe pas, ou plus.
+      </p>
+    </div>
+  </section>
+  <section class="section center-text">
+    <div class="container">
+      <a routerLink="/les-carnets" class="btn btn--primary">Voir tous les carnets</a>
+    </div>
+  </section>
+}

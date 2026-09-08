@@ -1,50 +1,11 @@
-.contact-form {
+.contact-card {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contact-actions {
   display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.1rem;
-}
-
-.contact-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--ocean-deep);
-}
-
-.contact-form input,
-.contact-form textarea {
-  border: 1px solid rgba(22, 93, 135, 0.25);
-  border-radius: 12px;
-  padding: 0.7em 0.9em;
-  font-size: 0.95rem;
-  color: var(--ink);
-  resize: vertical;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: 2px solid var(--turquoise);
-  outline-offset: 1px;
-}
-
-.contact-form button {
-  align-self: flex-start;
-  margin-top: 0.4rem;
-}
-
-.contact-form button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-@media (max-width: 560px) {
-  .form-row { grid-template-columns: 1fr; }
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }

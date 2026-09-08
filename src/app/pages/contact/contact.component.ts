@@ -1,42 +1,15 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
-interface ContactForm {
-  nom: string;
-  prenom: string;
-  email: string;
-  telephone: string;
-  objet: string;
-  message: string;
-}
+import { WaveComponent } from '../../shared/wave/wave.component';
 
 /**
- * Formulaire de contact — v1 sans backend.
- * À la connexion d'une API / plateforme d'emailing, remplacer `envoyer()`
- * par un vrai appel HTTP. En attendant, le formulaire ouvre un e-mail
- * pré-rempli vers lesouffleoceanique@gmail.com pour rester fonctionnel.
+ * Contact — v1 sans formulaire en ligne.
+ * On affiche simplement les coordonnées (téléphone, email) en liens directs.
+ * Un vrai formulaire de réservation/contact sera développé en v2.
  */
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule],
+  imports: [WaveComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
-export class ContactComponent {
-  form: ContactForm = {
-    nom: '',
-    prenom: '',
-    email: '',
-    telephone: '',
-    objet: '',
-    message: '',
-  };
-
-  envoyer() {
-    const sujet = encodeURIComponent(this.form.objet || 'Contact depuis le site');
-    const corps = encodeURIComponent(
-      `Nom : ${this.form.nom}\nPrénom : ${this.form.prenom}\nEmail : ${this.form.email}\nTéléphone : ${this.form.telephone}\n\n${this.form.message}`
-    );
-    window.location.href = `mailto:lesouffleoceanique@gmail.com?subject=${sujet}&body=${corps}`;
-  }
-}
+export class ContactComponent {}
