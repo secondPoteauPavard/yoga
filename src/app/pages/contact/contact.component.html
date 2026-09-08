@@ -1,0 +1,57 @@
+<section class="section section--ocean page-hero">
+  <div class="container">
+    <p class="section-eyebrow">Contact / Inscription</p>
+    <h1>Écrire, appeler, s'inscrire</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container two-col">
+    <div>
+      <h2>Coordonnées</h2>
+      <ul class="detail-list" style="font-size:1rem;">
+        <li><strong>Téléphone</strong> — <a href="tel:0624494658">06 24 49 46 58</a></li>
+        <li><strong>Email</strong> — <a href="mailto:lesouffleoceanique@gmail.com">lesouffleoceanique&#64;gmail.com</a></li>
+        <li><strong>Réseaux</strong> — Instagram &amp; Facebook : &#64;lesouffleoceanique</li>
+        <li><strong>Lieux</strong> — Salle Manaoc (Labenne Océan) &amp; salle privée (Labenne marais d'Orx)</li>
+      </ul>
+      <p class="lede" style="margin-top:1.5rem;font-size:0.85rem;">
+        Ce formulaire ouvre votre messagerie avec le message pré-rempli — une vraie prise en
+        charge en ligne (envoi direct, confirmation automatique) sera branchée avec le futur
+        outil d'emailing.
+      </p>
+    </div>
+
+    <form class="contact-form card" (ngSubmit)="envoyer()" #contactForm="ngForm">
+      <div class="form-row">
+        <label>
+          Prénom
+          <input type="text" name="prenom" [(ngModel)]="form.prenom" required />
+        </label>
+        <label>
+          Nom
+          <input type="text" name="nom" [(ngModel)]="form.nom" required />
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          Email
+          <input type="email" name="email" [(ngModel)]="form.email" required />
+        </label>
+        <label>
+          Téléphone (facultatif)
+          <input type="tel" name="telephone" [(ngModel)]="form.telephone" />
+        </label>
+      </div>
+      <label>
+        Objet
+        <input type="text" name="objet" [(ngModel)]="form.objet" placeholder="Inscription, question, atelier..." />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="5" [(ngModel)]="form.message" required></textarea>
+      </label>
+      <button type="submit" class="btn btn--primary" [disabled]="contactForm.invalid">Envoyer</button>
+    </form>
+  </div>
+</section>

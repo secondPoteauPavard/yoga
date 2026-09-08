@@ -1,0 +1,25 @@
+<section class="section section--ocean page-hero">
+  <div class="container">
+    <p class="section-eyebrow">Les Carnets</p>
+    <h1>Bientôt disponible</h1>
+    <p class="lede" style="color:rgba(255,255,255,0.9);">
+      Un espace pour lire, plutôt qu'un blog : corps &amp; mouvement, souffle, yoga de l'énergie,
+      son &amp; vibration, transmission, réflexions, traversées...
+    </p>
+  </div>
+</section>
+
+<section class="section center-text">
+  <div class="container">
+    <div class="categories">
+      @for (cat of categories; track cat) {
+        <span class="pill">{{ cat }}</span>
+      }
+    </div>
+    <p class="lede center-text" style="margin:2rem auto 0;">
+      Les premiers articles seront publiables directement par Émilie une fois l'espace
+      d'administration branché — titre, image, texte, catégorie, date et extrait.
+    </p>
+    <a routerLink="/contact" class="btn btn--primary" style="margin-top:1rem;">Être prévenu·e de la sortie</a>
+  </div>
+</section>

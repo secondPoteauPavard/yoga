@@ -1,0 +1,123 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(246, 242, 236, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(22, 93, 135, 0.08);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--ocean-deep);
+}
+.brand:hover { text-decoration: none; }
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a.is-active {
+  color: var(--terracotta);
+}
+
+.nav-cta {
+  padding: 0.55em 1.3em;
+  font-size: 0.9rem;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  background: var(--ocean-deep);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+@media (max-width: 860px) {
+  .burger { display: flex; }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--sand-light);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+    border-bottom: 1px solid rgba(22, 93, 135, 0.1);
+  }
+
+  .nav--open { max-height: 32rem; padding-bottom: 1rem; }
+
+  .nav a {
+    padding: 0.7rem 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(22, 93, 135, 0.06);
+  }
+
+  .nav-cta {
+    margin-top: 0.6rem;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger.is-open span:nth-child(2) { opacity: 0; }
+  .burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}

@@ -1,0 +1,14 @@
+.wave {
+  line-height: 0;
+  margin-bottom: -2px; /* évite un liseré entre la vague et la section suivante */
+}
+
+.wave--flip {
+  transform: scaleY(-1);
+}
+
+.wave svg {
+  width: 100%;
+  height: clamp(30px, 6vw, 70px);
+  display: block;
+}

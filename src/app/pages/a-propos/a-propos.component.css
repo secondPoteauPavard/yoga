@@ -1,0 +1,9 @@
+.draft-note {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  background: var(--sand);
+  border: 1px dashed var(--turquoise);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}

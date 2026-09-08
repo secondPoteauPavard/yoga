@@ -1,1 +1,296 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================================================
+   Le Souffle Océanique — design tokens & styles globaux
+   Palette et typographies basées sur "Les couleurs.docx" et les affiches
+   fournies par Émilie. Les polices Google Fonts ci-dessous sont des
+   équivalents temporaires : les fichiers "Better Signature" et
+   "Swistblnk Moabhoers" envoyés étaient corrompus (métadonnées macOS),
+   à remplacer dès que les vraies polices sont récupérées.
+   ========================================================================== */
+
+:root {
+  /* Couleurs — voir Les couleurs.docx */
+  --ocean-deep: #165D87;
+  --ocean: #006DA8;
+  --turquoise: #2788AE;
+  --sky-blue: #3BA5CF;
+  --violet-blue: #455F97;
+  --coral: #CB9380;
+  --terracotta: #D18877;
+  --sand: #F1E8DD;
+  --sand-light: #F6F2EC;
+  --white: #FFFFFF;
+  --ink: #223244;
+  --ink-soft: #4A5A6A;
+
+  /* Typographies — équivalents provisoires, à remplacer par les vraies polices */
+  --font-display: 'Quicksand', sans-serif;   /* remplace "Swistblnk Moabhoers" */
+  --font-script: 'Caveat', cursive;          /* remplace "Better Signature" */
+  --font-body: 'Nunito', sans-serif;
+
+  --radius-organic: 40% 60% 55% 45% / 45% 40% 60% 55%;
+  --shadow-soft: 0 12px 32px rgba(22, 93, 135, 0.12);
+  --max-width: 1140px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--sand-light);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.6em;
+  color: var(--ocean-deep);
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); letter-spacing: 0.01em; }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
+h3 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--ocean);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+.script {
+  font-family: var(--font-script);
+  font-weight: 600;
+  color: var(--terracotta);
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+img { max-width: 100%; display: block; }
+
+button, input, textarea, select { font-family: inherit; }
+
+/* Layout ------------------------------------------------------------- */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+}
+
+.section--sand { background: var(--sand); }
+.section--white { background: var(--white); }
+.section--ocean {
+  background: linear-gradient(160deg, var(--ocean-deep), var(--ocean) 60%, var(--turquoise));
+  color: var(--white);
+}
+.section--ocean h1, .section--ocean h2, .section--ocean h3 { color: var(--white); }
+
+.section-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--terracotta);
+}
+
+.section--ocean .section-eyebrow { color: var(--sand); }
+
+.lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+.section--ocean .lede { color: rgba(255, 255, 255, 0.9); }
+
+/* Boutons -------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.8em;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  text-decoration: none;
+}
+.btn:hover { transform: translateY(-2px); text-decoration: none; }
+
+.btn--primary {
+  background: var(--terracotta);
+  color: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+.btn--primary:hover { background: var(--coral); }
+
+.btn--ghost {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+
+/* Cartes ----------------------------------------------------------------- */
+
+.card {
+  background: var(--white);
+  border-radius: 28px;
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-soft);
+  height: 100%;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.3em 0.9em;
+  border-radius: 999px;
+  background: var(--sand);
+  color: var(--ocean-deep);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Emplacement photo (en attente des vraies photos) ----------------------- */
+
+.photo-placeholder {
+  border-radius: var(--radius-organic);
+  background: linear-gradient(135deg, var(--turquoise), var(--ocean-deep));
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.photo-placeholder--coral { background: linear-gradient(135deg, var(--terracotta), var(--coral)); }
+.photo-placeholder--sand {
+  background: var(--sand);
+  color: var(--ocean-deep);
+  border: 2px dashed var(--turquoise);
+}
+
+/* Vagues (composant app-wave) -------------------------------------------- */
+
+.wave { display: block; width: 100%; line-height: 0; }
+.wave svg { width: 100%; height: auto; display: block; }
+
+/* Gabarits de page communs -------------------------------------------------- */
+
+.page-hero {
+  padding-top: clamp(3.5rem, 9vw, 6rem);
+}
+.page-hero h1 { max-width: 24ch; }
+.page-hero .lede { max-width: 65ch; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.detail-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.tarifs-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.tarifs-list {
+  list-style: none;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.tarifs-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--white);
+  border-radius: 14px;
+  padding: 0.85rem 1.1rem;
+}
+
+.tarifs-list strong { color: var(--ocean-deep); white-space: nowrap; }
+
+.definition-list {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.definition-list dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ocean-deep);
+  margin-bottom: 0.25rem;
+}
+
+.definition-list dd { margin: 0; color: var(--ink-soft); }
+
+/* Responsive utilities ----------------------------------------------------- */
+
+.stack { display: flex; flex-direction: column; gap: 1rem; }
+.center-text { text-align: center; }
+
+@media (max-width: 780px) {
+  .two-col, .tarifs-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 2.5rem 0; }
+}

@@ -1,0 +1,91 @@
+<!-- Hero ------------------------------------------------------------- -->
+<section class="hero section--ocean">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="section-eyebrow">Yoga de l'Énergie · Souffle · Son · Mouvement · Résonance</p>
+      <h1>Le Souffle Océanique</h1>
+      <p class="script hero-script">Respirer. Ressentir. Mettre le corps en mouvement.</p>
+      <p class="hero-text">
+        Un univers autour du Yoga de l'Énergie, du souffle, du mouvement, de la voix et des
+        vibrations sonores — à Labenne, près de l'océan.
+      </p>
+      <div class="hero-actions">
+        <a routerLink="/yoga" class="btn btn--primary">Découvrir le Yoga</a>
+        <a routerLink="/contact" class="btn btn--ghost">Contact / Inscription</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/images/logo.jpg" alt="Le Souffle Océanique" class="hero-logo" />
+    </div>
+  </div>
+</section>
+<app-wave fill="var(--sand-light)"></app-wave>
+
+<!-- Portes d'entrée ---------------------------------------------------- -->
+<section class="section section--white">
+  <div class="container">
+    <p class="section-eyebrow center-text">Entrer dans l'univers</p>
+    <h2 class="center-text">Par où commencer ?</h2>
+    <div class="card-grid portes-grid">
+      @for (porte of portes; track porte.path) {
+        <a [routerLink]="porte.path" class="card porte-card">
+          <h3>{{ porte.title }}</h3>
+          <p>{{ porte.text }}</p>
+          <span class="porte-link">Découvrir →</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Infos pratiques visibles dès l'accueil ------------------------------ -->
+<app-wave fill="var(--sand)" [flip]="true"></app-wave>
+<section class="section section--sand">
+  <div class="container infos-grid">
+    <div>
+      <p class="section-eyebrow">Informations pratiques</p>
+      <h2>Prochains cours</h2>
+      <ul class="infos-list">
+        <li>
+          <strong>Mardi</strong> — 14h-15h Yoga de l'Énergie, 15h-16h Méditation &amp; Yoga du son
+          <span class="pill">Salle Manaoc, Labenne Océan</span>
+        </li>
+        <li>
+          <strong>Mercredi</strong> — 14h30-15h30 Yoga enfants/ados, 17h45-18h45 et 19h-20h Yoga
+          adultes
+          <span class="pill">Salle privée, Labenne marais d'Orx</span>
+        </li>
+      </ul>
+      <p class="lede">1er cours d'essai gratuit en septembre.</p>
+      <a routerLink="/informations-pratiques" class="btn btn--primary">Tous les horaires &amp; tarifs</a>
+    </div>
+    <div class="photo-placeholder photo-placeholder--coral">
+      Photo à venir — pratique en extérieur
+    </div>
+  </div>
+</section>
+
+<!-- Contenu récent / Carnets -------------------------------------------- -->
+<app-wave fill="var(--white)"></app-wave>
+<section class="section section--white">
+  <div class="container carnets-teaser">
+    <div>
+      <p class="section-eyebrow">Les Carnets</p>
+      <h2>Corps &amp; mouvement, souffle, son, réflexions...</h2>
+      <p class="lede">Les premiers carnets arrivent bientôt. En attendant, suivez l'actualité sur Instagram et Facebook.</p>
+      <a routerLink="/les-carnets" class="btn btn--ghost">Voir Les Carnets</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact ---------------------------------------------------------- -->
+<section class="section section--ocean contact-cta">
+  <div class="container center-text">
+    <h2>Envie d'essayer ?</h2>
+    <p class="lede center-text" style="margin-inline:auto;">
+      Écrivez, appelez ou passez directement au 06 24 49 46 58 — premier cours d'essai offert en
+      septembre.
+    </p>
+    <a routerLink="/contact" class="btn btn--primary">Contact / Inscription</a>
+  </div>
+</section>
