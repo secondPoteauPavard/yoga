@@ -54,6 +54,16 @@
   color: rgba(255, 255, 255, 0.65);
 }
 
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 0.4rem;
+}
+
+.footer-bottom a:hover {
+  color: var(--sand);
+  text-decoration: underline;
+}
+
 @media (max-width: 780px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;

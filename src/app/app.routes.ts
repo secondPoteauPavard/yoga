@@ -66,5 +66,13 @@ export const routes: Routes = [
       import('./pages/contact/contact.component').then((m) => m.ContactComponent),
     title: 'Contact / Inscription — Le Souffle Océanique',
   },
+  {
+    path: 'mentions-legales',
+    loadComponent: () =>
+      import('./pages/mentions-legales/mentions-legales.component').then(
+        (m) => m.MentionsLegalesComponent
+      ),
+    title: 'Mentions légales — Le Souffle Océanique',
+  },
   { path: '**', redirectTo: '' },
 ];

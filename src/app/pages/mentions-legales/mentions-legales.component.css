@@ -1,0 +1,16 @@
+.legal-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.legal-content h2 {
+  margin-top: 2.2rem;
+}
+
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+
+.legal-content p {
+  color: var(--ink);
+}
