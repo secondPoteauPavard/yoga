@@ -160,6 +160,16 @@ button, input, textarea, select { font-family: inherit; }
   height: 100%;
 }
 
+/* Les titres de carte utilisent h2/h3 pour la sémantique, mais la taille
+   de h2/h3 "de section" est trop grande pour la largeur d'une carte
+   (ex. "Accompagnements individuels" qui débordait). */
+.card h2,
+.card h3 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
 .card-grid {
   display: grid;
   gap: 1.75rem;
