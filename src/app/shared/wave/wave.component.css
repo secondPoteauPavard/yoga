@@ -5,10 +5,20 @@
   line-height: 0;
   pointer-events: none;
   overflow: hidden;
+  box-sizing: border-box;
+  /* Masque un éventuel liseré de 1px dû à l'arrondi du SVG à une hauteur
+     fractionnaire (clamp non entier) : une bordure pleine, de la couleur
+     `fill`, comble ce pixel quelle que soit la façon dont le SVG est
+     rasterisé. */
+  border-bottom: 4px solid var(--mask-color, transparent);
 }
 
 .wave--flip {
   transform: scaleY(-1);
+  /* Une fois retournée, la bordure doit être posée sur le bord opposé de la
+     boîte pour se retrouver, visuellement, du bon côté après le flip. */
+  border-bottom: none;
+  border-top: 4px solid var(--mask-color, transparent);
 }
 
 .wave svg {

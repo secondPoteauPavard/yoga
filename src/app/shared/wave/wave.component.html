@@ -1,4 +1,10 @@
-<div class="wave" [class.wave--flip]="flip" [style.background]="from" aria-hidden="true">
+<div
+  class="wave"
+  [class.wave--flip]="flip"
+  [style.background]="from"
+  [style.--mask-color]="fill"
+  aria-hidden="true"
+>
   <svg viewBox="0 0 1200 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path
       [attr.fill]="fill"
