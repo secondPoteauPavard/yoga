@@ -1,11 +1,55 @@
 /* ==========================================================================
    Le Souffle Océanique — design tokens & styles globaux
    Palette et typographies basées sur "Les couleurs.docx" et les affiches
-   fournies par Émilie. Les polices Google Fonts ci-dessous sont des
-   équivalents temporaires : les fichiers "Better Signature" et
-   "Swistblnk Moabhoers" envoyés étaient corrompus (métadonnées macOS),
-   à remplacer dès que les vraies polices sont récupérées.
+   fournies par Émilie.
    ========================================================================== */
+
+/* Polices auto-hébergées (public/assets/fonts) — plus de dépendance à Google
+   Fonts : un chargement de moins, et plus d'adresse IP envoyée à Google à
+   chaque page (voir mentions-legales.component.html).
+
+   Swistblnk Moabhoers et Better Signature n'existent chacune qu'en un seul
+   poids (respectivement Bold et Regular). `font-weight: 100 900` déclare que
+   ce seul fichier couvre toute la plage de graisses : le CSS du site demande
+   parfois 400, parfois 600 ou 700 sur ces familles (voir plus bas), et sans
+   cette plage le navigateur risquerait de fabriquer un faux gras par-dessus
+   le dessin existant — ce qui rend en général mal, surtout sur une police
+   script comme Better Signature. Avec la plage, toute graisse demandée
+   retombe proprement sur l'unique dessin disponible, sans altération. */
+@font-face {
+  font-family: 'Swistblnk Moabhoers';
+  src: url('/assets/fonts/swistblnk-moabhoers.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Better Signature';
+  src: url('/assets/fonts/better-signature.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Futura Std, elle, fournit deux vrais dessins distincts (Book = texte
+   courant, Bold = gras) : chacun est déclaré à son propre poids, sans plage,
+   pour que le navigateur utilise le bon fichier plutôt que d'en déduire un. */
+@font-face {
+  font-family: 'Futura Std';
+  src: url('/assets/fonts/futura-std-book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura Std';
+  src: url('/assets/fonts/futura-std-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Couleurs — voir Les couleurs.docx */
@@ -22,10 +66,10 @@
   --ink: #223244;
   --ink-soft: #4A5A6A;
 
-  /* Typographies — équivalents provisoires, à remplacer par les vraies polices */
-  --font-display: 'Quicksand', sans-serif;   /* remplace "Swistblnk Moabhoers" */
-  --font-script: 'Caveat', cursive;          /* remplace "Better Signature" */
-  --font-body: 'Nunito', sans-serif;
+  /* Typographies — polices définitives fournies par Émilie */
+  --font-display: 'Swistblnk Moabhoers', 'Quicksand', sans-serif;
+  --font-script: 'Better Signature', 'Caveat', cursive;
+  --font-body: 'Futura Std', 'Nunito', sans-serif;
 
   --radius-organic: 40% 60% 55% 45% / 45% 40% 60% 55%;
   --shadow-soft: 0 12px 32px rgba(22, 93, 135, 0.12);

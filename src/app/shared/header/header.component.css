@@ -129,7 +129,10 @@
   }
 
   /* Le lien Contact/Inscription doit avoir le même style que les autres
-     liens dans le menu déroulant (pas de bouton plein distinct). */
+     liens dans le menu déroulant (pas de bouton plein distinct). La classe
+     .btn impose aussi sa propre police (--font-display, celle des boutons) :
+     sans la réinitialiser ici, ce lien gardait une police différente des
+     autres liens du menu même une fois le fond/bordure de bouton retirés. */
   .nav a.nav-cta {
     margin-top: 0;
     background: transparent;
@@ -138,7 +141,9 @@
     box-shadow: none;
     border-radius: 0;
     padding: 0.7rem 0;
+    font-family: var(--font-body);
     font-size: 0.95rem;
+    font-weight: 600;
     text-align: left;
     justify-content: flex-start;
     width: 100%;
