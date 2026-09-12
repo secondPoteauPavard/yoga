@@ -21,7 +21,7 @@
       @for (link of links; track link.path) {
         <a [routerLink]="link.path" routerLinkActive="is-active" (click)="closeMenu()">{{ link.label }}</a>
       }
-      <a routerLink="/contact" class="btn btn--primary nav-cta" (click)="closeMenu()">Contact / Inscription</a>
+      <a routerLink="/contact" routerLinkActive="is-active" (click)="closeMenu()">Contact / Inscription</a>
     </nav>
   </div>
 </header>

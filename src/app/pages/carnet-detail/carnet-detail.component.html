@@ -1,12 +1,12 @@
 @if (carnet(); as c) {
-  <section class="section section--ocean page-hero">
+  <section class="section page-hero">
     <div class="container">
       <p class="section-eyebrow">{{ c.category }}</p>
       <h1>{{ c.title }}</h1>
-      <p class="lede" style="color:rgba(255,255,255,0.9);">{{ formatDate(c.date) }}</p>
+      <p class="lede">{{ formatDate(c.date) }}</p>
     </div>
   </section>
-  <app-wave fill="var(--sand-light)" from="var(--turquoise)"></app-wave>
+  <app-wave></app-wave>
 
   <section class="section">
     <div class="container">
@@ -21,11 +21,11 @@
     </div>
   </section>
 } @else if (notFound()) {
-  <section class="section section--ocean page-hero">
+  <section class="section page-hero">
     <div class="container">
       <p class="section-eyebrow">Les Carnets</p>
       <h1>Carnet introuvable</h1>
-      <p class="lede" style="color:rgba(255,255,255,0.9);">
+      <p class="lede">
         Ce carnet n'existe pas, ou plus.
       </p>
     </div>

@@ -2,19 +2,11 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(246, 242, 236, 0.92);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(22, 93, 135, 0.08);
-  border-radius: 0 0 26px 26px;
-  /* overflow:hidden fait que le fond flouté (backdrop-filter) respecte
-     bien l'arrondi du bandeau pendant le scroll (sinon un léger liseré
-     apparaît au raccord de l'arrondi). On le désactive uniquement quand
-     le menu mobile est ouvert, pour qu'il puisse déborder sous le bandeau. */
-  overflow: hidden;
-}
-
-.site-header.menu-open {
-  overflow: visible;
+  /* Header droit (plus d'arrondi), fond écru translucide — voir
+     design_handoff_refonte_visuelle/README.md. */
+  background: rgba(246, 242, 236, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(22, 93, 135, 0.09);
 }
 
 .bar {
@@ -40,8 +32,8 @@
 .brand:hover { text-decoration: none; }
 
 .brand-logo {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -56,25 +48,25 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: clamp(14px, 1.7vw, 26px);
   flex-wrap: wrap;
 }
 
+/* Contact / Inscription est un lien de menu comme les autres, plus un
+   bouton plein (retour d'Émilie : moins de bleu/couleur pleine) : l'état
+   actif se voit au soulignement corail plutôt qu'à un fond de bouton. */
 .nav a {
   color: var(--ink);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
 }
 
 .nav a:hover,
 .nav a.is-active {
   color: var(--terracotta);
-}
-
-.nav-cta {
-  padding: 0.55em 1.3em;
-  font-size: 0.9rem;
+  border-bottom-color: var(--terracotta);
 }
 
 .burger {
@@ -117,42 +109,23 @@
     border-bottom: 1px solid rgba(22, 93, 135, 0.1);
     border-left: 1px solid rgba(22, 93, 135, 0.1);
     border-radius: 0 0 0 20px;
-    box-shadow: -6px 10px 24px rgba(22, 93, 135, 0.14);
   }
 
   .nav--open { max-height: 32rem; padding-bottom: 1rem; }
 
+  /* Dans le menu déroulant, chaque lien occupe sa propre ligne avec un
+     filet de séparation neutre ; seule la couleur du texte marque l'état
+     actif/survolé (le filet de séparation ne devient pas corail, pour
+     rester lisible comme séparateur de liste). */
   .nav a {
     padding: 0.7rem 0;
     width: 100%;
     border-bottom: 1px solid rgba(22, 93, 135, 0.06);
   }
 
-  /* Le lien Contact/Inscription doit avoir le même style que les autres
-     liens dans le menu déroulant (pas de bouton plein distinct). La classe
-     .btn impose aussi sa propre police (--font-display, celle des boutons) :
-     sans la réinitialiser ici, ce lien gardait une police différente des
-     autres liens du menu même une fois le fond/bordure de bouton retirés. */
-  .nav a.nav-cta {
-    margin-top: 0;
-    background: transparent;
-    color: var(--ink);
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    padding: 0.7rem 0;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-align: left;
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .nav a.nav-cta:hover {
-    background: transparent;
-    color: var(--terracotta);
-    transform: none;
+  .nav a:hover,
+  .nav a.is-active {
+    border-bottom-color: rgba(22, 93, 135, 0.06);
   }
 
   .burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }

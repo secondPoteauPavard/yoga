@@ -1,14 +1,7 @@
-<div
-  class="wave"
-  [class.wave--flip]="flip"
-  [style.background]="from"
-  [style.--mask-color]="fill"
-  aria-hidden="true"
->
-  <svg viewBox="0 0 1200 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      [attr.fill]="fill"
-      d="M0,300 L0,230 Q600,-80 1200,230 L1200,300 Z"
-    ></path>
+<div class="wave" [class.wave--flip]="flip" aria-hidden="true">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M0,104 Q300,4 600,58 T1200,58" fill="none" stroke="var(--ocean-deep)" stroke-width="1.5" opacity="0.55" />
+    <path d="M0,92 Q300,-8 600,46 T1200,46" fill="none" stroke="var(--turquoise)" stroke-width="1.5" opacity="0.5" />
+    <path d="M0,116 Q300,16 600,70 T1200,70" fill="none" stroke="var(--sky-blue)" stroke-width="1.5" opacity="0.45" />
   </svg>
 </div>

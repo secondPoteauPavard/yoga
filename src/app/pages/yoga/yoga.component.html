@@ -1,8 +1,8 @@
-<section class="section section--ocean page-hero">
+<section class="section page-hero">
   <div class="container">
     <p class="section-eyebrow">Yoga de l'Énergie</p>
-    <h1>Souffle, mouvement, attention, regard intérieur, sensation, énergie et présence</h1>
-    <p class="lede" style="color:rgba(255,255,255,0.9);">
+    <h1 class="h1--long">Souffle, mouvement, attention, regard intérieur, sensation, énergie et présence</h1>
+    <p class="lede">
       Un Hatha Yoga indo-tibétain adapté aux débutants comme aux confirmés, soucieux de développer
       la conscience de la circulation de l'énergie dans leur pratique. Ce yoga, doux, alterne les
       phases statiques (tonification ou assouplissement, méditation) et les phases dynamiques,
@@ -10,7 +10,7 @@
     </p>
   </div>
 </section>
-<app-wave fill="var(--sand-light)" from="var(--turquoise)"></app-wave>
+<app-wave></app-wave>
 
 <section class="section">
   <div class="container three-col">
@@ -47,8 +47,8 @@
   </div>
 </section>
 
-<app-wave fill="var(--sand)" from="var(--sand-light)"></app-wave>
-<section class="section section--sand">
+<app-wave [flip]="true"></app-wave>
+<section class="section section--band">
   <div class="container tarifs-grid">
     <div>
       <p class="section-eyebrow">Tarifs</p>
@@ -62,6 +62,6 @@
       </ul>
       <a routerLink="/contact" class="btn btn--primary">M'inscrire / poser une question</a>
     </div>
-    <div class="photo-placeholder">Photo à venir — cours de yoga</div>
+    <div class="photo-placeholder" style="aspect-ratio:4/3;">Photo à venir — cours de yoga</div>
   </div>
 </section>

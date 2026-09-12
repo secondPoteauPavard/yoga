@@ -1,15 +1,15 @@
-<section class="section section--ocean page-hero">
+<section class="section page-hero">
   <div class="container">
     <p class="section-eyebrow">À propos</p>
     <h1>Qui suis-je ?</h1>
   </div>
 </section>
-<app-wave fill="var(--sand-light)" from="var(--turquoise)"></app-wave>
+<app-wave></app-wave>
 
 <section class="section">
   <div class="container two-col">
     <div>
-      <p class="lede">
+      <p class="lede" style="max-width:56ch;">
         Émilie Gavart, formée au yoga de l'énergie EFYSO (600h), accompagne depuis 15 ans les
         enfants et les adolescents.
       </p>
@@ -20,14 +20,14 @@
           place.</p>
       </div>
     </div>
-    <div class="photo-placeholder photo-placeholder--sand">Portrait à venir</div>
+    <div class="photo-placeholder photo-placeholder--dashed" style="aspect-ratio:3/4;">Portrait à venir</div>
   </div>
 </section>
 
-<app-wave fill="var(--sand)" from="var(--sand-light)"></app-wave>
-<section class="section section--sand center-text">
+<app-wave [flip]="true"></app-wave>
+<section class="section section--band center-text">
   <div class="container">
-    <p class="script" style="font-size:1.8rem;">Respirer · Se mettre en mouvement · Résonner · Méditer</p>
+    <p class="script" style="font-size:clamp(1.7rem,3.4vw,2.4rem);">Respirer · Se mettre en mouvement · Résonner · Méditer</p>
     <a routerLink="/contact" class="btn btn--primary" style="margin-top:1rem;">Me contacter</a>
   </div>
 </section>

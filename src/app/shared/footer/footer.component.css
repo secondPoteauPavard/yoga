@@ -1,13 +1,17 @@
+/* Pied de page bleu très clair plutôt que le bloc bleu plein/écru
+   d'origine : un des grands aplats du site, présent sur chaque page —
+   voir design_handoff_refonte_visuelle/README.md. */
 .site-footer {
-  background: var(--ocean-deep);
-  color: rgba(255, 255, 255, 0.88);
-  padding: 3.5rem 0 1.5rem;
+  background: var(--band-blue);
+  color: var(--ink-soft);
+  padding: clamp(48px, 7vw, 88px) 0 1.5rem;
+  border-top: 1px solid rgba(22, 93, 135, 0.09);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: clamp(28px, 3vw, 48px);
 }
 
 .footer-brand .footer-logo {
@@ -18,12 +22,13 @@
 }
 
 .footer-brand .script {
-  color: var(--sand);
-  font-size: 1.3rem;
+  color: var(--terracotta);
+  font-size: 1.35rem;
+  line-height: 1.2;
 }
 
 .site-footer h3 {
-  color: var(--white);
+  color: var(--ocean-deep);
   font-size: 1rem;
   margin-bottom: 0.9rem;
 }
@@ -39,37 +44,27 @@
 
 .footer-links a,
 .footer-links li {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--ink-soft);
   font-size: 0.92rem;
 }
 
 .footer-links a { text-decoration: none; }
-.footer-links a:hover { color: var(--sand); text-decoration: underline; }
+.footer-links a:hover { color: var(--terracotta); }
 
 .footer-bottom {
-  margin-top: 2.5rem;
+  margin-top: clamp(36px, 5vw, 64px);
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(22, 93, 135, 0.12);
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--ink-soft);
 }
 
 .footer-bottom a {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--ocean-deep);
   margin-left: 0.4rem;
+  text-decoration: none;
 }
 
 .footer-bottom a:hover {
-  color: var(--sand);
-  text-decoration: underline;
-}
-
-@media (max-width: 780px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-grid { grid-template-columns: 1fr; }
+  color: var(--terracotta);
 }
